@@ -1,0 +1,39 @@
+5. spatial tree
+    1. QuadTree
+    2. OctTree
+    3. K-Dimensional Tree
+        - x 값이나 y값만 같은 것은 중복허용이지만 x와 y 둘다 같은 것은 허용 x
+
+        - median 기준으로 작으면 왼쪽, 크면 오른쪽
+
+        - 같은 숫자가 있다면 
+            - median과 같은 값이 왼쪽 or 오른쪽
+        
+        - static
+
+        - k = 2 : x, y, x, y, x, y ...
+        - k = 3 : x, y, z, x, y, z ...
+        - 2, 5, 5, 5, 5, 5, 9, 10이면 왼쪽 오른쪽으로 5를 나누는 것이 아니라 다 같은쪽으로 보냄
+        
+        - p56에 (5,2), (5,7)가 왼쪽으로 가는 이유는 root에서 같은 것은 왼쪽으로 가는 rule을 했기 때문
+
+        - dynamic insertion은 가능하긴 하지만 root가 median이 아닐수도 있어서 re-constructing 해야 됨.
+
+        - deletion도 다시 re-constructing 해야 됨.        
+
+        - properties
+            - 똑같은 median이 많을 경우 한쪽으로 치우침
+
+    4. Binary Trie
+        - 단점 : 필요없이 길게 내려와야 할 수도 있다. p78
+        - O(k) : 마지막까지 내려와서 비교해서 있는지 확인. inbalanced 함.
+        - efficient for exact key match and partial key match
+
+    5. Compressed binary Trie
+        - binary trie의 마지막까지 와야되는 단점을 보완하기 위해 branch를 없앰
+        - each branch node is degree 2
+        - branch node has : left-child ptr, right-child ptr, bit-number
+    6. Multi-Way Trie
+        - *는 중간의 마지막을 뜻함. bee도 p92에 있음
+
+
