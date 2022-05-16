@@ -1,0 +1,48 @@
+Synchronization
+    계속 기다리면 안되기 때문에 starvation free
+    1.28은 deadlock이 생김
+    Peterson`s solution은 2개 이상일때 복잡해짐
+    atomic : non-interruptible        
+
+    1.38 : 계속 하드웨어를 solution require busy waiting
+
+    mutex는 binary semaphore은 integer형
+    
+    1.46 : L과 H는 R로 연관됨(독립적이 아님). M이 실행됨을써 L과 H가 delay.
+     H가 M을 기다리는 기이한 현상 발생
+    -> 우선권을 상속받아서 우선순위를 상속받았기 때문에 M에게 우선순위를 안뺏김.
+
+    1.48 : 1) 순서가 잘못됨. signal을 통해 2가 된 상태에서 wait를 부르면 문제가 발생
+    mutual exclusion is violated
+    2) deadlock will occur
+
+    1.57 read만 하는 것은 문제가 안생김. write까지 하면 문제가 생김
+    1.59 single core가 아니기 때문에 안전히 readcount--;하기 위해 wait(mutex) 사용
+
+Deadlocks1
+    - cycle = deadlock?
+    instance가 1개면 deadlock이 됨. 여러개가 있으면 deadlock이 아닐 수도 있음
+Deadlocks2
+    - Deadlock Preventation
+        - 4개의 condition 중 하나라도 못되게 함
+        - 리소스를 잡고 기다리기 x
+        - allow preemption
+        - no circular wait
+            - printer은 disk drive에 요청x (order가 먼저라)
+    - Problems of No hold and wait
+        - low resource utilization (기다리기만 하니까)
+        - starvation
+
+    - Deadlock avoidance
+        - deadlock이 일어날지 미리 생각(simulation)
+        - 자원을 줄 수 있는 sequence가 있는 safe sequence가 발견되면 할당해줘도 된다
+    1.19 : P1 -> P0 -> P2
+    1.22 unsafe state : 조금이라도 deadlock이 걸릴 가능성이 있을때
+    1.29 : j번째 리소스를 k개 들고있음
+    1.30 : Finish[i] == false -> not finished one
+
+    1.47: 요청이 올때마다 하면 이 프로세스가 deadlock을 했구나를 알지만 overhead가 늘어남
+    1.49 : deadlock이 없어질 때까지 죽이기
+    
+    1.20 : 다양한 시점에 binding
+    1.23 : relocation할때 address가 바뀌면 다시 reload 해야됨

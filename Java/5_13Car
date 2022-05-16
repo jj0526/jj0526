@@ -1,0 +1,23 @@
+
+public class ClassCarSound{
+	public void run() {System.out.println("Car의 run 메소드");
+	
+}
+public class Bus extends ClassCarsound{
+	public void sound() {
+		System.out.println("Bus의 sound 메소드");
+		
+	}
+	public void run() {
+		System.out.println("Bus의 run 메소드");
+		
+	}
+	public static void main(Stirng[] args) {
+		Car c = new Bus();
+		c.run;
+		        //car에 있는 애들만 접근 가능하고
+	}           //car가 더 크기 때문에 안됨 Bus c = b는 가능. 
+	Bus b = c;  //error! Bus b = Bus c;는 가능 하지만 이렇게 막 쓰면 안됨. 
+                //instanceof 사용
+}
+

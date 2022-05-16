@@ -1,0 +1,8 @@
+Inteface
+    - interface는 다 안짬
+    - abstract는 중간 중간 안짬
+
+    class Employee implements Comparable{
+        ...
+    }
+    
