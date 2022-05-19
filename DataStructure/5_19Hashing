@@ -1,0 +1,4 @@
+    Bloom filter
+        71 : odd = 0 even = 1 -> doesn't exist
+        odd = 1, even = 1 -> it may exist
+        
