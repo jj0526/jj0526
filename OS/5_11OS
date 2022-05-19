@@ -37,6 +37,7 @@ Deadlocks2
         - deadlock이 일어날지 미리 생각(simulation)
         - 자원을 줄 수 있는 sequence가 있는 safe sequence가 발견되면 할당해줘도 된다
     1.19 : P1 -> P0 -> P2
+    1.21 : compile에서 주소를 부여는 x
     1.22 unsafe state : 조금이라도 deadlock이 걸릴 가능성이 있을때
     1.29 : j번째 리소스를 k개 들고있음
     1.30 : Finish[i] == false -> not finished one
@@ -46,3 +47,28 @@ Deadlocks2
     
     1.20 : 다양한 시점에 binding
     1.23 : relocation할때 address가 바뀌면 다시 reload 해야됨
+
+    잘 사용하지 않는 library는 dynamic하게 저장
+
+
+    - Paging
+        - physical memory -> fixed-sized block : frames
+        - logical memory -> blocks of same size : pages
+        size of one frame = size of one page
+
+    1.39 : page and page offset
+    1.41 : logical address : 1  frame : 5(21), offset : 1
+            logical address : 11    frame : 5, offset : 3
+    1.46 : internal fragmentation 2048 * 35 + 1086
+    context change가 일어났을때 PTBR과 PTLR를 바꿔주면 됨
+    cache를 TLB라 부름. search가 매우 빠름
+    parellel하게 search 해서 있으면 TLB hit, 없다면 TLB miss
+    1.54 : page table는 index 사용(p)
+    1.55 다른 cache임.
+    1.56 EAT = ... miss 했을때 expectation. TLB를 잘 짜면 102ns까지 내려감
+    1.61 Hierarchical paging 계층
+    1.61 : p를 넣으면 f가 튀어나옴
+    1.66 한 os에는 하나의 table만 있다. physical frame 기준으로 indexing 하기.
+     i번째 index면 table에 그대로 그 index에 가면 됨.
+     단점 : worst case : 맨 아래에 있으면 오래걸림
+     memory share가 어려움
