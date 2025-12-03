@@ -8,7 +8,7 @@ I am Sihyeon Jeon, studying backend development
 
 
 ## Github stats
-[![minseon yu's GitHub stats](https://github-readme-stats.vercel.app/api?username=jj0526)](https://github.com/jj0526/github-readme-stats)
+[![jj0526's GitHub stats](https://github-readme-stats.vercel.app/api?username=jj0526)](https://github.com/jj0526/github-readme-stats)
 
 
 <!--
